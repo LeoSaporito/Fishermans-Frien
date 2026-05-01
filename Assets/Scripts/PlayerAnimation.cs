@@ -20,14 +20,19 @@ public class PlayerAnimation : MonoBehaviour
     void Update()
     {
         input = playerMovementScript.directionalInput;
+        isMoving = input != Vector2.zero;
 
         if (playerMovementAnimator)
         {
             if (isMoving)
-            { 
-                playerMovementAnimator.SetFloat("MoveX", input.x);        
-            
-                playerMovementAnimator.SetFloat("MoveY", input.y);            
+            {
+                playerMovementAnimator.SetFloat("MoveX", input.x);
+                playerMovementAnimator.SetFloat("MoveY", input.y);
+                playerMovementAnimator.SetBool("IsMoving", isMoving);
+            }
+            else
+            {
+                playerMovementAnimator.SetBool("IsMoving", isMoving = false);
             }
         }
     }

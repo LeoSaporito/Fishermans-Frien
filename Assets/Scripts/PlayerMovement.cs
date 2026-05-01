@@ -16,27 +16,26 @@ public class PlayerMovement : MonoBehaviour
     Vector2 playerPosition;
     public Vector2 directionalInput;
 
+    Rigidbody2D rb;
+
     void Start()
     {
-
+        rb = GetComponent<Rigidbody2D>();
     }
-    void Update()
+    void FixedUpdate()
     {
-        playerPosition = transform.position;
-
         switch (currentState)
         {
             case MovementState.MovingHorizontal:
-                playerPosition.x += moveSpeed * Time.deltaTime * directionalInput.x;
+                rb.linearVelocity = new Vector2(moveSpeed * directionalInput.x, 0);
                 break;
             case MovementState.MovingVertical:
-                playerPosition.y += moveSpeed * Time.deltaTime * directionalInput.y;
+                rb.linearVelocity = new Vector2(0, moveSpeed * directionalInput.y);
                 break;
             case MovementState.Idle:
+                rb.linearVelocity = Vector2.zero;
                 break;
         }
-
-        transform.position = playerPosition;
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -59,4 +58,11 @@ public class PlayerMovement : MonoBehaviour
             directionalInput = Vector2.zero;
         }
     }
+    //void OnTriggerExit2D(Collider2D other)
+    //{
+    //    if (other.CompareTag("Water"))
+    //    {
+    //        directionalInput = Vector2.zero;
+    //    }
+    //}
 }
