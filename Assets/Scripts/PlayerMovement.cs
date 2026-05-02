@@ -13,14 +13,16 @@ public class PlayerMovement : MonoBehaviour
     public MovementState currentState;
 
     public float moveSpeed;
-    Vector2 playerPosition;
     public Vector2 directionalInput;
 
     Rigidbody2D rb;
 
+    public PlayerCasting playerCastingScript;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        playerCastingScript = GetComponent<PlayerCasting>();
     }
     void FixedUpdate()
     {
@@ -56,13 +58,6 @@ public class PlayerMovement : MonoBehaviour
         {
             currentState = MovementState.Idle;
             directionalInput = Vector2.zero;
-        }
+        }        
     }
-    //void OnTriggerExit2D(Collider2D other)
-    //{
-    //    if (other.CompareTag("Water"))
-    //    {
-    //        directionalInput = Vector2.zero;
-    //    }
-    //}
 }

@@ -2,18 +2,20 @@ using UnityEngine;
 
 public class PlayerAnimation : MonoBehaviour
 {
-    public Animator playerMovementAnimator;
+    public Animator playerAnimator;
 
     public PlayerMovement playerMovementScript;
+    public PlayerCasting playerCastingScript;
 
     public Vector2 input;
 
     public bool isMoving;
-    public bool isNotMoving;
+    public bool isRodOut;
+    public bool isRodIn;
 
     void Start()
     {
-        playerMovementAnimator = GetComponent<Animator>();
+        playerAnimator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -21,18 +23,32 @@ public class PlayerAnimation : MonoBehaviour
     {
         input = playerMovementScript.directionalInput;
         isMoving = input != Vector2.zero;
+        isRodOut = playerCastingScript.isRodOut;
+        isRodIn = playerCastingScript.isRodIn;
 
-        if (playerMovementAnimator)
+        if (playerAnimator)
         {
             if (isMoving)
             {
-                playerMovementAnimator.SetFloat("MoveX", input.x);
-                playerMovementAnimator.SetFloat("MoveY", input.y);
-                playerMovementAnimator.SetBool("IsMoving", isMoving);
+                playerAnimator.SetFloat("MoveX", input.x);
+                playerAnimator.SetFloat("MoveY", input.y);
+                playerAnimator.SetBool("IsMoving", isMoving);
             }
             else
             {
-                playerMovementAnimator.SetBool("IsMoving", isMoving = false);
+                playerAnimator.SetBool("IsMoving", isMoving = false);
+            }
+
+            if (!isMoving && playerCastingScript.isRodOut)
+            {
+                playerAnimator.SetBool("IsRodOut", isRodOut = true);
+                playerAnimator.SetBool("IsRodIn", isRodIn = false);
+
+            }
+            else 
+            {
+                playerAnimator.SetBool("IsRodOut", isRodOut = false);
+                playerAnimator.SetBool("IsRodIn", isRodIn = true);
             }
         }
     }
