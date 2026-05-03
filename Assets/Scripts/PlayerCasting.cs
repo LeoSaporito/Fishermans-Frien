@@ -25,6 +25,8 @@ public class PlayerCasting : MonoBehaviour
     public bool isCasting;
 
     public Coroutine hookCastingCoroutine;
+
+    public Animator playerCastAnimator;
     void Start()
     {
         isRodIn = true;
@@ -56,14 +58,16 @@ public class PlayerCasting : MonoBehaviour
 
             isCasting = false;
 
-            HookSpawned();
+            playerCastAnimator.SetBool("IsRodOut", isRodOut);
+            playerCastAnimator.SetTrigger("Cast");
         }
     }
 
-    public void HookSpawned()
+    public void AnimationEvent_SpawnHook()
     {
         hookSpawned = Instantiate(hook, transform.position, Quaternion.identity);
 
+        hookCastingProgress = 0f;
         hookCastingCoroutine = StartCoroutine(HookCastingUpdate());
     }
 
@@ -75,7 +79,7 @@ public class PlayerCasting : MonoBehaviour
         while (hookCastingProgress < hookCastingDuration)
         { 
             hookCastingProgress += Time.deltaTime;
-            float hookCastedTime = hookCastingProgress / hookCastingDuration;
+            float hookCastedTime = currentPower / hookCastingDuration;
 
             hookSpawned.transform.position = Vector2.Lerp(startPosition, endPosition, hookCastedTime);
             

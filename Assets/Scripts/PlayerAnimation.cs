@@ -41,14 +41,9 @@ public class PlayerAnimation : MonoBehaviour
 
             if (!isMoving && playerCastingScript.isRodOut)
             {
-                playerAnimator.SetBool("IsRodOut", isRodOut = true);
-                playerAnimator.SetBool("IsRodIn", isRodIn = false);
+                playerAnimator.SetBool("IsRodOut", playerCastingScript.isRodOut);
+                playerAnimator.SetBool("IsRodIn", playerCastingScript.isRodIn);
 
-            }
-            else 
-            {
-                playerAnimator.SetBool("IsRodOut", isRodOut = false);
-                playerAnimator.SetBool("IsRodIn", isRodIn = true);
             }
         }
     }

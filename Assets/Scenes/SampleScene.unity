@@ -695,6 +695,7 @@ MonoBehaviour:
   maxPower: 5
   castingSpeed: 3
   isCasting: 0
+  playerCastAnimator: {fileID: 563053904}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
