@@ -227,7 +227,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 3.6
+  orthographic size: 5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -686,6 +686,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerCasting
   isRodOut: 0
   isRodIn: 0
+  hook: {fileID: 8398493116600826569, guid: 0c4bcde78a6fa384587f5fddaabc5e80, type: 3}
+  hookCastingDuration: 1
+  hookCastingProgress: 0
+  hookSpeed: 3
+  currentPosition: {x: 0, y: 0}
+  currentPower: 0
+  maxPower: 5
+  castingSpeed: 3
+  isCasting: 0
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0

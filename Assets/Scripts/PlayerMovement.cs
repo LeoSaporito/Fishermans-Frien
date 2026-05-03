@@ -44,12 +44,12 @@ public class PlayerMovement : MonoBehaviour
     {
         directionalInput = context.ReadValue<Vector2>();
 
-        if (directionalInput.x != 0)
+        if (directionalInput.x != 0 && playerCastingScript.isRodOut == false)
         {
             currentState = MovementState.MovingHorizontal;
             directionalInput = new Vector2(Mathf.Sign(directionalInput.x), 0);
         }
-        else if (directionalInput.y != 0)
+        else if (directionalInput.y != 0 && playerCastingScript.isRodOut == false)
         {
             currentState = MovementState.MovingVertical;
             directionalInput = new Vector2(0, Mathf.Sign(directionalInput.y));
