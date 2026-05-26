@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Leo Cast Out Down
+  m_Name: Right Walking
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,13 +21,13 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: -3852391435146933136, guid: 8e4cb9ee401e78b4d89434413df17ef7, type: 3}
+      value: {fileID: -515652993970454679, guid: 524ab68d989327c44bc76277301f8c50, type: 3}
     - time: 0.16666667
-      value: {fileID: 4692705013490318213, guid: 8e4cb9ee401e78b4d89434413df17ef7, type: 3}
+      value: {fileID: 8879786822428070450, guid: 524ab68d989327c44bc76277301f8c50, type: 3}
     - time: 0.33333334
-      value: {fileID: 8517562818115440607, guid: 8e4cb9ee401e78b4d89434413df17ef7, type: 3}
+      value: {fileID: -3052539570313618351, guid: 524ab68d989327c44bc76277301f8c50, type: 3}
     - time: 0.5
-      value: {fileID: 3513320051878007319, guid: 8e4cb9ee401e78b4d89434413df17ef7, type: 3}
+      value: {fileID: -1613823637351103355, guid: 524ab68d989327c44bc76277301f8c50, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -50,10 +50,10 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: -3852391435146933136, guid: 8e4cb9ee401e78b4d89434413df17ef7, type: 3}
-    - {fileID: 4692705013490318213, guid: 8e4cb9ee401e78b4d89434413df17ef7, type: 3}
-    - {fileID: 8517562818115440607, guid: 8e4cb9ee401e78b4d89434413df17ef7, type: 3}
-    - {fileID: 3513320051878007319, guid: 8e4cb9ee401e78b4d89434413df17ef7, type: 3}
+    - {fileID: -515652993970454679, guid: 524ab68d989327c44bc76277301f8c50, type: 3}
+    - {fileID: 8879786822428070450, guid: 524ab68d989327c44bc76277301f8c50, type: 3}
+    - {fileID: -3052539570313618351, guid: 524ab68d989327c44bc76277301f8c50, type: 3}
+    - {fileID: -1613823637351103355, guid: 524ab68d989327c44bc76277301f8c50, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
@@ -78,11 +78,4 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events:
-  - time: 0.33333334
-    functionName: AnimationEvent_SpawnHook
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
+  m_Events: []

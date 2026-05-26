@@ -27,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
     {
         switch (currentState)
         { 
-            case MovementState.MovingHorizontal:
+        case MovementState.MovingHorizontal:
             rb.linearVelocity = new Vector2(moveSpeed * directionalInput.x, 0);
             break;
         case MovementState.MovingVertical:
